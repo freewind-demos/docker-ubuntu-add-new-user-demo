@@ -18,7 +18,7 @@ docker-compose up
 3. 使用的image可能不支持`bash/curl`，或者`bash`的路径不是`test.sh`中指定的路径，需要确认
 4. 在docker container中使用`host.docker.internal`指向host
 5. `docker-compose.yml`使用`depends_on`来指定启动顺序
-6. `Dockerfile`中copy了文件进去后，要手动添加`+x`
+6. `Dockerfile`中copy了文件进去后，会手动继承外界的权限。如果需要不同的权限，需要用`RUN`要手动改变
 
 
 References
