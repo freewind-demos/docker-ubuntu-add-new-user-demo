@@ -1,5 +1,8 @@
-FROM cosmintitei/bash-curl
+FROM ubuntu:18.04
 
-COPY ./test.sh ./test.sh
+RUN useradd -ms /bin/bash freewind
+WORKDIR /home/freewind
 
-ENTRYPOINT ["./test.sh"]
+USER freewind
+
+RUN mkdir ./hello && ls -al ./hello
